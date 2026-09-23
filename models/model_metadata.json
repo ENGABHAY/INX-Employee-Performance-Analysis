@@ -1,0 +1,84 @@
+{
+  "hiring_model": {
+    "model_name": "XGBoost",
+    "needs_scaling": false,
+    "label_offset": 2,
+    "test_accuracy": 0.4166666666666667,
+    "macro_f1": 0.3309447297733638,
+    "cv_macro_f1": 0.3693237619690999,
+    "best_params": {
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 100
+    },
+    "feature_columns": [
+      "Age",
+      "Gender",
+      "EducationBackground",
+      "MaritalStatus",
+      "EmpDepartment",
+      "EmpJobRole",
+      "EmpJobLevel",
+      "BusinessTravelFrequency",
+      "DistanceFromHome",
+      "EmpEducationLevel",
+      "NumCompaniesWorked",
+      "TotalWorkExperienceInYears"
+    ],
+    "top_predictors": [
+      "EmpDepartment",
+      "EmpJobRole",
+      "NumCompaniesWorked"
+    ],
+    "selection_criterion": "CV macro-F1 (5-fold, stratified)",
+    "class_weighting": "balanced (native class_weight or compute_sample_weight)"
+  },
+  "diagnostic_model": {
+    "model_name": "Random Forest",
+    "needs_scaling": false,
+    "label_offset": 0,
+    "test_accuracy": 0.9416666666666667,
+    "macro_f1": 0.9009898624617874,
+    "cv_macro_f1": 0.8956883945303538,
+    "best_params": {
+      "max_depth": 10,
+      "min_samples_leaf": 2,
+      "n_estimators": 300
+    },
+    "feature_columns": [
+      "Age",
+      "Gender",
+      "EducationBackground",
+      "MaritalStatus",
+      "EmpDepartment",
+      "EmpJobRole",
+      "BusinessTravelFrequency",
+      "DistanceFromHome",
+      "EmpEducationLevel",
+      "EmpEnvironmentSatisfaction",
+      "EmpHourlyRate",
+      "EmpJobInvolvement",
+      "EmpJobLevel",
+      "EmpJobSatisfaction",
+      "NumCompaniesWorked",
+      "OverTime",
+      "EmpLastSalaryHikePercent",
+      "EmpRelationshipSatisfaction",
+      "TotalWorkExperienceInYears",
+      "TrainingTimesLastYear",
+      "EmpWorkLifeBalance",
+      "ExperienceYearsAtThisCompany",
+      "ExperienceYearsInCurrentRole",
+      "YearsSinceLastPromotion",
+      "YearsWithCurrManager",
+      "Attrition"
+    ],
+    "top_3_factors": [
+      "EmpLastSalaryHikePercent",
+      "EmpEnvironmentSatisfaction",
+      "YearsSinceLastPromotion"
+    ],
+    "selection_criterion": "CV macro-F1 (5-fold, stratified)",
+    "class_weighting": "balanced (native class_weight or compute_sample_weight)"
+  }
+}
